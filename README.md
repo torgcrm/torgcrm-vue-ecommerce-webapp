@@ -1,5 +1,7 @@
 # torgcrm-vue-ecommerce-webapp
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/torgcrm/torgcrm-vue-ecommerce-webapp.svg)](https://greenkeeper.io/)
+
 > TorgCRM Vue ECommerce web application
 
 ## Build Setup
