@@ -1,9 +1,9 @@
 <template>
   <div class="level-left">
     <div class="level-item">
-      <p class="subtitle is-5">
+      <a href="/" class="subtitle is-5">
         <strong>TorgCRM ECommerce</strong>
-      </p>
+      </a>
     </div>
   </div>
 </template>

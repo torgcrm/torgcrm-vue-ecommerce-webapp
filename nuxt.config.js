@@ -17,6 +17,15 @@ module.exports = {
     'xui-module',
     '@nuxtjs/axios',
   ],
+
+  plugins: [
+    { src: '~/plugins/nuxt-client-init.js', ssr: false },
+    { src: '~/plugins/axios.js'}
+  ],
+
+  axios: {
+    baseURL: 'http://localhost:8080/torgcrm-ecommerce-web/',
+  },
   /*
   ** Customize the progress bar color
   */

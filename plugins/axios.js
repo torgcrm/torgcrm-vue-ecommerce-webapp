@@ -1,6 +1,5 @@
-import axios from 'axios'
-
-export default axios.create({
-  baseURL: 'http://localhost:8080/torgcrm-ecommerce-web/',
-  headers: {'Project-Host': 'domain.ru'}
-})
+export default ({req, $axios}) => {
+  const headers = (req && req.headers) ? Object.assign({}, req.headers) : {};
+  const hostHeader = headers['x-forwarded-host'];
+  $axios.setHeader("Project-Host", hostHeader);
+}

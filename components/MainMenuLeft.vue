@@ -1,11 +1,9 @@
 <template>
   <aside class="menu">
-    <p class="menu-label">
-      Catalog
-    </p>
+    <p class="menu-label">Каталог</p>
     <ul class="menu-list">
-      <li v-for="item in leftMenu.menuItems" v-bind:key="item.id">
-        <a a href="#">{{item.name}}</a>
+      <li v-for="item in catalog" v-bind:key="item.id">
+        <a v-bind:href="'/catalog/' + item.slug" >{{item.title}}</a>
       </li>
     </ul>
   </aside>
@@ -16,8 +14,8 @@
     name: "main-menu-left",
     props: ['menu'],
     computed: {
-      leftMenu() {
-        return this.$store.state.topMenu
+      catalog() {
+        return this.$store.state.catalog
       }
     }
   }

@@ -7,7 +7,6 @@
         <main-menu-left/>
       </div>
       <div class="column">
-        <product-list v-if="Products.length > 0" v-bind:products=Products />
         <div class="box" v-if="Products.length <= 0">
           Items not found
         </div>

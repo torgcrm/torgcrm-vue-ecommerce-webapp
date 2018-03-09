@@ -7,9 +7,8 @@
         <main-menu-left/>
       </div>
       <div class="column">
-        <product-list v-if="Products.length > 0" v-bind:products=Products />
-        <div class="box" v-if="Products.length <= 0">
-          Items not found
+        <div class="box">
+          <h1>{{ProductDetails.title}}</h1>
         </div>
       </div>
     </div>
@@ -23,22 +22,28 @@
   import MainMenuLeft from '@/components/MainMenuLeft.vue'
 
   export default {
-    head: {
-      title: 'Main page',
+    head() {
+      return {
+        title: this.ProductDetails.title
+      }
     },
-    fetch({store}) {
-      return store.dispatch('getProducts');
+    fetch({store, params}) {
+      return store.dispatch('product/getProductBySlug', params.slug);
     },
     computed: {
-      Products() {
-        return this.$store.state.products
-      }
+      ProductDetails() {
+        return this.$store.state.product.details
+      },
     },
     components: {
       AppLogo,
       MainHeader,
       ProductList,
-      MainMenuLeft,
-    },
+      MainMenuLeft
+    }
   }
 </script>
+
+<style scoped>
+
+</style>
