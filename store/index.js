@@ -2,7 +2,7 @@ export const state = () => ({
   products: [],
   topMenu: [],
   leftMenu: [],
-  catalog: [],
+  catalogMenu: [],
   cart: [],
 });
 
@@ -19,8 +19,8 @@ export const mutations = {
   setCart(state, cart) {
     state.cart = cart
   },
-  setCatalog(state, catalog) {
-    state.catalog = catalog
+  setCatalogMenu(state, catalog) {
+    state.catalogMenu = catalog
   }
 };
 
@@ -58,6 +58,6 @@ export const actions = {
 
   async getCatalog({commit}) {
     let {data} = await this.$axios.get('catalog');
-    commit('setCatalog', data);
+    commit('setCatalogMenu', data);
   }
 };

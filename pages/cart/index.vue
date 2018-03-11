@@ -1,9 +1,14 @@
 <template>
-  <div class="container">
-    <main-header/>
-    <div class="hero"></div>
-    <div class="columns">
-      <div class="column">
+  <div>
+    <div class="level main-menu-header-container">
+      <main-menu-header/>
+    </div>
+
+    <div class="container">
+      <main-header/>
+      <div class="columns">
+        <div class="column">
+        </div>
       </div>
     </div>
   </div>
@@ -14,6 +19,7 @@
   import MainHeader from '@/components/MainHeader.vue'
   import ProductList from '@/components/ProductList.vue'
   import MainMenuLeft from '@/components/MainMenuLeft.vue'
+  import MainMenuHeader from '@/components/MainMenuHeader'
 
   export default {
     head: {
@@ -22,13 +28,13 @@
     mounted() {
       this.$store.dispatch('addToCart')
     },
-    computed: {
-    },
+    computed: {},
     components: {
       AppLogo,
       MainHeader,
       ProductList,
       MainMenuLeft,
+      MainMenuHeader,
     },
   }
 </script>

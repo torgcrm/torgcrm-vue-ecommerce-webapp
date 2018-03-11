@@ -1,16 +1,21 @@
 <template>
-  <div class="container">
-    <main-header/>
-    <div class="hero"></div>
-    <div class="columns">
-      <div class="column is-3">
-        <main-menu-left/>
-      </div>
-      <div class="column">
-        <div class="box" v-if="Products.length <= 0">
-          Items not found
+  <div>
+    <div class="level main-menu-header-container">
+      <main-menu-header/>
+    </div>
+
+    <div class="container">
+      <main-header/>
+      <section class="section">
+        <div class="columns">
+          <div class="column is-3">
+            <main-menu-left/>
+          </div>
+          <div class="column">
+            <h1>{{PageDetails.title}}</h1>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </template>
@@ -20,17 +25,20 @@
   import MainHeader from '@/components/MainHeader.vue'
   import ProductList from '@/components/ProductList.vue'
   import MainMenuLeft from '@/components/MainMenuLeft.vue'
+  import MainMenuHeader from '@/components/MainMenuHeader'
 
   export default {
-    head: {
-      title: 'Main page',
+    head() {
+      return {
+        title: this.PageDetails.title
+      }
     },
-    fetch({store}) {
-      return store.dispatch('getProducts');
+    fetch({store, params}) {
+      return store.dispatch('page/getPageDetails', params.slug);
     },
     computed: {
-      Products() {
-        return this.$store.state.products
+      PageDetails() {
+        return this.$store.state.page.details
       }
     },
     components: {
@@ -38,6 +46,7 @@
       MainHeader,
       ProductList,
       MainMenuLeft,
+      MainMenuHeader
     },
   }
 </script>

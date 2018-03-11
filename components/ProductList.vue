@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div>
     <div class="columns is-multiline">
       <div class="column is-4" v-for="(details, key) in products" v-bind:key="key" >
         <product-details v-bind:product-details="details" />
@@ -16,10 +16,6 @@
     props: ['products'],
     components: {
       ProductDetails,
-    }
+    },
   }
 </script>
-
-<style scoped>
-
-</style>

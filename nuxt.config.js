@@ -13,6 +13,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  css: [
+    '~assets/css/main.scss',
+  ],
   modules: [
     'xui-module',
     '@nuxtjs/axios',

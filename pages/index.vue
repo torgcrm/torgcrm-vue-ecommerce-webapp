@@ -1,17 +1,21 @@
 <template>
-  <div class="container">
-    <main-header/>
-    <div class="hero"></div>
-    <div class="columns">
-      <div class="column is-3">
-        <main-menu-left/>
-      </div>
-      <div class="column">
-        <product-list v-if="Products.length > 0" v-bind:products=Products />
-        <div class="box" v-if="Products.length <= 0">
-          Items not found
+  <div>
+    <div class="level main-menu-header-container">
+      <main-menu-header />
+    </div>
+
+    <div class="container">
+      <main-header/>
+      <section class="section">
+        <div class="columns">
+          <div class="column is-3">
+            <main-menu-left/>
+          </div>
+          <div class="column">
+            <product-list v-if="Products.length > 0" v-bind:products=Products />
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </template>
@@ -21,6 +25,7 @@
   import MainHeader from '@/components/MainHeader.vue'
   import ProductList from '@/components/ProductList.vue'
   import MainMenuLeft from '@/components/MainMenuLeft.vue'
+  import MainMenuHeader from '@/components/MainMenuHeader'
 
   export default {
     head: {
@@ -39,6 +44,7 @@
       MainHeader,
       ProductList,
       MainMenuLeft,
+      MainMenuHeader,
     },
   }
 </script>
