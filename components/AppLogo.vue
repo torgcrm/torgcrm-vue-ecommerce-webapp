@@ -2,12 +2,14 @@
   <div class="level-left">
     <div class="level-item">
       <a href="/" class="subtitle is-5">
-        <strong>TorgCRM ECommerce</strong>
+        <strong>{{name}}</strong>
       </a>
     </div>
   </div>
 </template>
 
-<style>
-
-</style>
+<script>
+  export default {
+    props: ['name']
+  }
+</script>

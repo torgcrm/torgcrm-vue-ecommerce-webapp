@@ -2,11 +2,11 @@
   <div class="component-main-header">
     <div class="level">
       <div class="level-left">
-        <app-logo/>
+        <app-logo v-bind:name="CurrentProject.title" />
       </div>
       <nav class="level-right">
         <div class="level-right">
-          <p>+7 499 111-22-33</p>
+          <p>{{CurrentProject.phone}}</p>
         </div>
       </nav>
     </div>
@@ -21,6 +21,11 @@
     components: {
       AppLogo,
     },
+    computed: {
+      CurrentProject () {
+        return this.$store.state.project
+      },
+    }
   }
 </script>
 

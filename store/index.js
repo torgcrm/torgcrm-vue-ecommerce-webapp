@@ -4,6 +4,7 @@ export const state = () => ({
   leftMenu: [],
   catalogMenu: [],
   cart: [],
+  project: undefined,
 });
 
 export const mutations = {
@@ -21,6 +22,9 @@ export const mutations = {
   },
   setCatalogMenu(state, catalog) {
     state.catalogMenu = catalog
+  },
+  setCurrentProject(state, project) {
+    state.project = project;
   }
 };
 
@@ -35,10 +39,11 @@ export const actions = {
     // localStorage.setItem('hello', 'hel12312312312312lo');
     // commit('setProducts', [{title: localStorage.getItem('hello')}]);
   },
-  async nuxtServerInit({dispatch, req}) {
+  async nuxtServerInit({dispatch}) {
     await dispatch('getTopMenu');
     await dispatch('getLeftMenu');
     await dispatch('getCatalog');
+    await dispatch('getCurrentProject');
   },
 
   async getProducts({commit}) {
@@ -59,5 +64,9 @@ export const actions = {
   async getCatalog({commit}) {
     let {data} = await this.$axios.get('catalog');
     commit('setCatalogMenu', data);
-  }
+  },
+  async getCurrentProject({commit}) {
+    let {data} = await this.$axios.get('project');
+    commit('setCurrentProject', data);
+  },
 };

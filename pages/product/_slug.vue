@@ -21,13 +21,13 @@
                 <div class="column">
                   <div class="tile is-parent is-vertical">
                     <div class="tile is-child notification ">
-                      <h1 class="title">{{ProductDetails.title}}</h1>
-                      <p>Артикул: {{123}}</p>
+                      <h1 class="title">{{ProductDetails.viewName}}</h1>
+                      <p>Артикул: {{ProductDetails.article}}</p>
                       <p>Наличие: В наличии</p>
                     </div>
 
                     <div class="tile is-child notification is-warning">
-                      <strong class="title">Цена: 1 203 руб.</strong>
+                      <strong class="title">Цена: {{ProductDetails.price}} руб.</strong>
                     </div>
 
                     <div class="tile is-child">
@@ -47,7 +47,7 @@
                 </ul>
               </div>
               <div id="description">
-                description
+                {{ProductDetails.seoText}}
               </div>
             </section>
           </div>
