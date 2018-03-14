@@ -39,6 +39,11 @@
         return this.$store.state.products
       }
     },
+    data() {
+      return {
+        isComponentModalActive: false,
+      }
+    },
     components: {
       AppLogo,
       MainHeader,

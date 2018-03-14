@@ -17,13 +17,13 @@ module.exports = {
     '~assets/css/main.scss',
   ],
   modules: [
-    'xui-module',
     '@nuxtjs/axios',
   ],
 
   plugins: [
     { src: '~/plugins/nuxt-client-init.js', ssr: false },
-    { src: '~/plugins/axios.js'}
+    { src: '~/plugins/axios.js'},
+    { src: '~/plugins/buefy.js'}
   ],
 
   axios: {

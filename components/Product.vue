@@ -22,7 +22,7 @@
       <a class="card-footer-item add-to-cart">
         <span>✨ В корзину</span>
       </a>
-      <a class="card-footer-item one-click-buy">
+      <a class="card-footer-item one-click-buy" @click="$emit('buyOneClick', productDetails.id)">
         <span>Купить 😻</span>
       </a>
     </footer>

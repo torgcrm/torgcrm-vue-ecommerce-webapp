@@ -27,12 +27,14 @@
                     </div>
 
                     <div class="tile is-child notification is-warning">
-                      <strong class="title">Цена: {{ProductDetails.price}} руб.</strong>
+                      <p><strong class="title">Цена: {{ProductDetails.price}} руб.</strong></p>
+                      <p v-show="ProductDetails.oldPrice" class="old-price">Старая цена:
+                        <span class="old-price-throw">{{ProductDetails.oldPrice}} руб.</span></p>
                     </div>
 
                     <div class="tile is-child">
                       <div class="level-item level-left">
-                        <a class="button is-warning">Купить в один клик 😻</a>
+                        <a @click="isComponentModalActive = true" class="button is-warning">Купить в один клик 😻</a>
                         <a class="button is-primary">В корзину ✨</a>
                       </div>
                     </div>
@@ -54,6 +56,10 @@
         </div>
       </section>
     </div>
+
+    <b-modal :active.sync="isComponentModalActive" has-modal-card>
+      <modal-form ></modal-form>
+    </b-modal>
   </div>
 </template>
 
@@ -63,6 +69,8 @@
   import ProductList from '@/components/ProductList.vue'
   import MainMenuLeft from '@/components/MainMenuLeft.vue'
   import MainMenuHeader from '@/components/MainMenuHeader'
+  import ModalForm from '@/components/ModalForm'
+  import BModal from 'buefy/src/components/modal/Modal.vue'
 
   export default {
     head() {
@@ -78,12 +86,19 @@
         return this.$store.state.product.details
       },
     },
+    data() {
+      return {
+        isComponentModalActive: false,
+      }
+    },
     components: {
       AppLogo,
       MainHeader,
       ProductList,
       MainMenuLeft,
-      MainMenuHeader
+      MainMenuHeader,
+      BModal,
+      ModalForm
     }
   }
 </script>
@@ -101,5 +116,12 @@
   }
   .button {
     margin-left: 5px;
+  }
+  .old-price,
+  .old-price-throw{
+    opacity: 0.75;
+  }
+  .old-price-throw {
+    text-decoration: line-through;
   }
 </style>
