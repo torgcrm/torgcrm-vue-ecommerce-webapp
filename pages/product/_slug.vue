@@ -58,7 +58,7 @@
     </div>
 
     <b-modal :active.sync="isComponentModalActive" has-modal-card>
-      <modal-form ></modal-form>
+      <one-click-buy />
     </b-modal>
   </div>
 </template>
@@ -69,7 +69,7 @@
   import ProductList from '@/components/ProductList.vue'
   import MainMenuLeft from '@/components/MainMenuLeft.vue'
   import MainMenuHeader from '@/components/MainMenuHeader'
-  import ModalForm from '@/components/ModalForm'
+  import OneClickBuy from '@/components/OneClickBuy'
   import BModal from 'buefy/src/components/modal/Modal.vue'
 
   export default {
@@ -98,7 +98,7 @@
       MainMenuLeft,
       MainMenuHeader,
       BModal,
-      ModalForm
+      OneClickBuy
     }
   }
 </script>

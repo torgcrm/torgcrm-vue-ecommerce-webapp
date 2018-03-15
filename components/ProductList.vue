@@ -7,14 +7,14 @@
     </div>
 
     <b-modal :active.sync="isComponentModalActive" has-modal-card>
-      <modal-form></modal-form>
+      <one-click-buy />
     </b-modal>
   </div>
 </template>
 
 <script>
   import ProductDetails from './Product.vue'
-  import ModalForm from '@/components/ModalForm'
+  import OneClickBuy from '@/components/OneClickBuy'
   import BModal from 'buefy/src/components/modal/Modal.vue'
 
   export default {
@@ -22,7 +22,7 @@
     props: ['products'],
     components: {
       ProductDetails,
-      ModalForm,
+      OneClickBuy,
       BModal
     },
     methods: {

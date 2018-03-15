@@ -10,7 +10,8 @@
         </b-field>
       </section>
       <footer class="modal-card-foot">
-        <span>Мы свяжемся с вами в ближайшее время</span> <button class="button is-primary" type="button" >Купить</button>
+        <span>Мы свяжемся с вами в ближайшее время</span>
+        <button class="button is-primary" type="button" @click="clickToBuy" >Купить</button>
       </footer>
     </div>
   </form>
@@ -21,10 +22,16 @@
   import BInput from "buefy/src/components/input/Input.vue";
 
   export default {
+    name: "one-click-buy",
+    methods: {
+      clickToBuy() {
+        alert(1);
+      }
+    },
     components: {
       BInput,
-      BField},
-    name: "modal-form",
+      BField
+    },
   }
 </script>
 
