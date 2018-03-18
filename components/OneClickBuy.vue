@@ -25,7 +25,8 @@
     name: "one-click-buy",
     methods: {
       clickToBuy() {
-        alert(1);
+        let data = {"phone":"Hello","productId":"2"};
+        this.$store.dispatch("product/buyOneClick", data);
       }
     },
     components: {

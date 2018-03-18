@@ -35,9 +35,8 @@ export const actions = {
     localStorage.setItem('cart', JSON.stringify(cart));
     console.log(JSON.parse(localStorage.getItem('cart')));
   },
-  async nuxtClientInit({commit}) {
-    // localStorage.setItem('hello', 'hel12312312312312lo');
-    // commit('setProducts', [{title: localStorage.getItem('hello')}]);
+  async nuxtClientInit() {
+    this.$axios.setHeader("Project-Host", document.domain);
   },
   async nuxtServerInit({dispatch}) {
     await dispatch('getTopMenu');

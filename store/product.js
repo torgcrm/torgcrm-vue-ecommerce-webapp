@@ -16,6 +16,9 @@ export const actions = {
   async getProductsByCatalogSlug({commit}, slug) {
     let {data} = await this.$axios.get('products/catalog/' + slug);
     commit('setProductBySlug', data);
+  },
+  async buyOneClick({commit, res}, data) {
+    await this.$axios.post('orders/one-click', data);
   }
 };
 

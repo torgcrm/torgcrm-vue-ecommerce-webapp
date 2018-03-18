@@ -28,6 +28,7 @@ module.exports = {
 
   axios: {
     baseURL: 'http://localhost:8080/torgcrm-ecommerce-web/',
+
   },
   /*
   ** Customize the progress bar color
