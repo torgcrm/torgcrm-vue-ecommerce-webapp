@@ -4,6 +4,7 @@
       <section class="modal-card-body">
         <b-field label="Номер телефона">
           <b-input type="text"
+                   v-model="phone"
                    value="+7"
                    maxlength="15">
           </b-input>
@@ -25,14 +26,20 @@
     name: "one-click-buy",
     methods: {
       clickToBuy() {
-        let data = {"phone":"Hello","productId":"2"};
+        let data = {"phone":this.phone, "productId": this.$store.state.oneClickProduct};
         this.$store.dispatch("product/buyOneClick", data);
+        this.$emit('hideModal')
       }
     },
     components: {
       BInput,
       BField
     },
+    data () {
+      return {
+        phone: '+7'
+      }
+    }
   }
 </script>
 

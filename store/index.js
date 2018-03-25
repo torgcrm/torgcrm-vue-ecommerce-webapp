@@ -5,6 +5,7 @@ export const state = () => ({
   catalogMenu: [],
   cart: [],
   project: undefined,
+  oneClickProduct: undefined
 });
 
 export const mutations = {
@@ -25,6 +26,9 @@ export const mutations = {
   },
   setCurrentProject(state, project) {
     state.project = project;
+  },
+  setOneClickProduct(state, productId) {
+    state.oneClickProduct = productId;
   }
 };
 

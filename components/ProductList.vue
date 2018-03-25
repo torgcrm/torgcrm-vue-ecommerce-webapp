@@ -7,7 +7,7 @@
     </div>
 
     <b-modal :active.sync="isComponentModalActive" has-modal-card>
-      <one-click-buy />
+      <one-click-buy @hideModal="hideModal" />
     </b-modal>
   </div>
 </template>
@@ -27,7 +27,11 @@
     },
     methods: {
       buyOneClick(id) {
-        this.isComponentModalActive = true;
+        this.$store.commit('setOneClickProduct', id)
+        this.isComponentModalActive = true
+      },
+      hideModal() {
+        this.isComponentModalActive = false
       }
     },
     data() {
